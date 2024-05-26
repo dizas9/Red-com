@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <section className=" mx-auto 2xl:max-w-[100rem] flex flex-col">
-      <div className="lg:px-10 lg:py-2 p-2 flex items-center">
+      <div className="lg:px-10 md:px-28 lg:py-2 md:py-1 p-2 flex items-center">
         {/* sidebar + Navbar */}
         <div className="flex  w-[33.3%] gap-5 items-center">
           {/* menubar icon */}
@@ -70,7 +70,7 @@ export default function Header() {
         </div>
       </div>
 
-      <hr className="lg:mx-10 mx-3  bg-[rgba(148,163,184,0.55)] h-[0.2rem]" />
+      <hr className="lg:mx-10 md:mx-28 mx-3  bg-[rgba(148,163,184,0.55)] h-[0.1rem]" />
     </section>
   );
 }

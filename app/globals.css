@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer utilities {
+  .bulletClass {
+    @apply bg-gray-400 w-3 h-3 rounded-full opacity-100 mx-1;
+  }
+  .bulletActiveClass {
+    @apply bg-orange-500;
+  }
+} */

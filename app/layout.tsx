@@ -3,7 +3,7 @@ import { Inter, Kanit } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header/Header";
 
-const kanit = Kanit({ subsets: ["latin"], weight:"400" });
+const kanit = Kanit({ subsets: ["latin"], weight:"700" });
 
 export const metadata: Metadata = {
   title: "Twilight Assesment",
