@@ -3,7 +3,6 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { CgArrowTopRight } from "react-icons/cg";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
