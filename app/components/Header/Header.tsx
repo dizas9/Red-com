@@ -11,7 +11,7 @@ export default function Header() {
   const screenSize = useScreenResize();
 
   return (
-    <section className=" mx-auto 2xl:max-w-[100rem] flex flex-col fixed right-0 left-0 z-[120] bg-[#fffffff2]">
+    <section className=" mx-auto 2xl:max-w-[100rem] flex flex-col lg:fixed right-0 left-0 z-[120] lg:bg-[#fffffff2] bg-white m-0 p-0">
       <div className="lg:px-10 md:px-28 lg:py-2 md:py-1 p-2 flex items-center">
         {/* sidebar + Navbar */}
         <div className="flex  w-[33.3%] gap-5 items-center">

@@ -29,7 +29,7 @@ export default function Carousel({ slides }: CarouselProps) {
 
   return (
     <>
-      <div className="lg:h-[80vh] h-[40vh] md:h-[22vh]">
+      <div className="lg:h-[80vh] h-[35vh] md:h-[22vh]">
         <Swiper
           spaceBetween={0}
           pagination={{
@@ -51,24 +51,22 @@ export default function Carousel({ slides }: CarouselProps) {
           className="lg:h-full h-full rounded-lg"
         >
           {slides.map((slide, idx) => (
-            <>
-              <SwiperSlide className="px-0 relative" key={idx}>
-                <Image
-                  src={slide.src}
-                  alt="..."
-                  width={2000}
-                  height={1000}
-                  className="h-full"
-                />
-                <p className="text-2xl md:text-3xl lg:text-5xl font-bold   absolute bottom-[30%] lg:bottom-[20%] left-5 lg:left-10 uppercase text-white w-[80%]">
-                  simple & decidely mordern
-                </p>
-                <p className="text-lg md:text-lg font-bold   absolute bottom-[15%] lg:bottom-[10%]  left-5  lg:left-10 uppercase text-white w-fit flex items-center">
-                  Shop Now
-                  <CgArrowTopRight stroke="500" />
-                </p>
-              </SwiperSlide>
-            </>
+            <SwiperSlide className="px-0 relative" key={idx}>
+              <Image
+                src={slide.src}
+                alt="..."
+                width={2000}
+                height={1000}
+                className="h-full"
+              />
+              <p className="text-2xl md:text-3xl lg:text-5xl font-bold   absolute bottom-[30%] lg:bottom-[20%] left-5 lg:left-10 uppercase text-white w-[80%]">
+                simple & decidely mordern
+              </p>
+              <p className="text-lg md:text-lg font-bold   absolute bottom-[15%] lg:bottom-[10%]  left-5  lg:left-10 uppercase text-white w-fit flex items-center">
+                Shop Now
+                <CgArrowTopRight stroke="500" />
+              </p>
+            </SwiperSlide>
           ))}
         </Swiper>
 

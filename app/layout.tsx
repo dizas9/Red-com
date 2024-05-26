@@ -3,6 +3,7 @@ import { Inter, Kanit } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer Section/Footer";
+import FooterMenu from "./components/Footer Menu/FooterMenu";
 
 const kanit = Kanit({ subsets: ["latin"], weight:["700","400"] });
 
@@ -18,10 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={kanit.className}>
+      <body
+        className={`${kanit.className} h-screen lg:h-auto overflow-y-auto  m-0 p-0 relative`}
+      >
         <Header />
         {children}
-        <Footer/>
+        <FooterMenu/>
+        <Footer />
       </body>
     </html>
   );

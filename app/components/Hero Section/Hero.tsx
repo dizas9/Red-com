@@ -11,7 +11,7 @@ export default function Hero() {
   ];
   return (
     <>
-      <div className="relative w-full mt-24 mb-12 ">
+      <div className="relative w-full lg:mt-24  mb-12 ">
         <Carousel slides={slides}/>
       </div>
     </>
