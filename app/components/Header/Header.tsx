@@ -11,7 +11,7 @@ export default function Header() {
   const screenSize = useScreenResize();
 
   return (
-    <section className=" mx-auto 2xl:max-w-[100rem] flex flex-col">
+    <section className=" mx-auto 2xl:max-w-[100rem] flex flex-col fixed right-0 left-0 z-[120] bg-[#fffffff2]">
       <div className="lg:px-10 md:px-28 lg:py-2 md:py-1 p-2 flex items-center">
         {/* sidebar + Navbar */}
         <div className="flex  w-[33.3%] gap-5 items-center">
@@ -21,7 +21,7 @@ export default function Header() {
           </div>
 
           {/* NavItems */}
-          <div className="lg:flex gap-7 text-xs hidden ">
+          <div className="lg:flex gap-7 text-xs hidden font-normal ">
             <div className="flex items-center">Home</div>
             <div className="flex items-center gap-1">
               Categories <FaChevronDown />
@@ -38,7 +38,7 @@ export default function Header() {
         </div>
 
         {/* search + cart + language */}
-        <div className="flex items-center justify-between lg:justify-end lg:gap-5  w-[33.3%]">
+        <div className="flex items-center justify-between lg:justify-end lg:gap-5  w-[33.3%] ">
           {/* search */}
           <div className="flex gap-1 item-center">
             <HiOutlineSearch size={screenSize >= 1024 ? 20 : 22} />

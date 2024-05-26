@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Kanit } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer Section/Footer";
 
-const kanit = Kanit({ subsets: ["latin"], weight:"700" });
+const kanit = Kanit({ subsets: ["latin"], weight:["700","400"] });
 
 export const metadata: Metadata = {
   title: "Twilight Assesment",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={kanit.className}>
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );
