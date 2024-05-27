@@ -1,7 +1,7 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 import { CgArrowTopRight } from "react-icons/cg";
-
-
 
 // types
 interface ProductInfo {
@@ -31,6 +31,16 @@ interface ProductListProps {
 
 // components
 export default function ProductList({ title, products }: ProductListProps) {
+  const [hoveredItem, setHoveredItem] = useState(null);
+
+  const handleMouseEnter = (index:any) => {
+    setHoveredItem(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
+
   return (
     <div>
       {/* div1 */}
@@ -44,20 +54,32 @@ export default function ProductList({ title, products }: ProductListProps) {
       {/* div2 */}
       <div className="w-full flex flex-wrap gap-2 md:gap-7 items-start justify-center md:justify-start lg:justify-center h-fit md:h-1/2 mb-7">
         {products.map((item, idx) => (
-          <div className="w-[45%] md:w-[30%] lg:w-[22%] bg-gray-100" key={idx}>
+          <div
+            className={
+              hoveredItem === idx
+                ? "w-[45%] md:w-[30%] lg:w-[22%] hover:scale-105 transition-transform duration-500 relative"
+                : "w-[45%] md:w-[30%] lg:w-[22%] hover:scale-100"
+            }
+            onMouseEnter={() => handleMouseEnter(idx)}
+            onMouseLeave={handleMouseLeave}
+          >
             {/* image */}
-            <div className="h-[80%] ">
-              <Image
-                alt="..."
-                src={item.image[0].src}
-                width={500}
-                height={200}
-                key={idx}
-              />
-            </div>
+            <Image
+              alt="..."
+              src={hoveredItem === idx ? item.image[1].src : item.image[0].src}
+              width={500}
+              height={200}
+            />
+
+            {/* Shop now button */}
+            {hoveredItem === idx && (
+              <div className="py-1 text-center border absolute bottom-20 lg:left-3 left-2 bg-white w-[90%] rounded-lg cursor-pointer">
+                Shop Now
+              </div>
+            )}
 
             {/* name + price */}
-            <div className="h-[20%] flex flex-col gap-2">
+            <div className="h-[20%] flex flex-col gap-2 mt-2">
               <p className="">{item.name}</p>
 
               <div className="flex gap-2 font-semibold">
@@ -72,8 +94,6 @@ export default function ProductList({ title, products }: ProductListProps) {
           </div>
         ))}
       </div>
-
-    
     </div>
   );
 }

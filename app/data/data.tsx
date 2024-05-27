@@ -59,7 +59,7 @@ interface Product {
   info: ProductInfo[];
 }
 
-export const latest:Product[] = [
+export const latest: Product[] = [
   {
     image: [
       { src: "/images/latest/table1.webp" },
@@ -131,6 +131,7 @@ export const latest:Product[] = [
 
   {
     image: [
+      { src: "/images/latest/miranda.webp" },
       { src: "/images/latest/miranda.webp" },
     ],
     name: "Miranda Couch",
