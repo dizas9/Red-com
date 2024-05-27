@@ -52,6 +52,7 @@ interface ProductImage {
 interface Product {
   image: ProductImage[];
   name: string;
+  slug: string;
   qty: number;
   regularPrice?: number;
   discountPrice: number;
@@ -67,6 +68,7 @@ export const latest: Product[] = [
       { src: "/images/latest/table3.webp" },
     ],
     name: "Marta Small Table",
+    slug: "marta-small-table",
     qty: 87,
     regularPrice: 2300,
     discountPrice: 1700,
@@ -90,6 +92,7 @@ export const latest: Product[] = [
       { src: "/images/latest/chair3.webp" },
     ],
     name: "Michael Armchair",
+    slug: "michael-armchair",
     qty: 92,
     discountPrice: 12000,
     color: ["rgb(250, 205, 149)", "rgb(155, 155, 155)", "rgb(74, 144, 226)"],
@@ -113,6 +116,7 @@ export const latest: Product[] = [
       { src: "/images/latest/doorothy4.webp" },
     ],
     name: "Doorothy Tables",
+    slug: "doorothy-tables",
     qty: 95,
     regularPrice: 5900,
     discountPrice: 3200,
@@ -135,6 +139,7 @@ export const latest: Product[] = [
       { src: "/images/latest/miranda.webp" },
     ],
     name: "Miranda Couch",
+    slug: "miranda-couch",
     qty: 9,
     regularPrice: 15000,
     discountPrice: 1000,

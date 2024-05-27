@@ -1,44 +1,27 @@
 "use client";
+import { Product, ProductListProps } from "@/app/types/types";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { CgArrowTopRight } from "react-icons/cg";
-
-// types
-interface ProductInfo {
-  description: string;
-  delivery?: string;
-  policy?: string;
-}
-
-interface ProductImage {
-  src: string;
-}
-
-interface Product {
-  image: ProductImage[];
-  name: string;
-  qty: number;
-  regularPrice?: number;
-  discountPrice: number;
-  color?: string[];
-  info: ProductInfo[];
-}
-
-interface ProductListProps {
-  title: string;
-  products: Product[];
-}
 
 // components
 export default function ProductList({ title, products }: ProductListProps) {
   const [hoveredItem, setHoveredItem] = useState(null);
+  const router = useRouter();
 
-  const handleMouseEnter = (index:any) => {
+  const handleMouseEnter = (index: any) => {
     setHoveredItem(index);
   };
 
   const handleMouseLeave = () => {
     setHoveredItem(null);
+  };
+
+  // navigate to product details page
+  const handleClick = (product: Product) => {
+    const encodePeoduct = encodeURIComponent(JSON.stringify(product));
+    router.push(`/details/${product.slug}?product=${encodePeoduct}`);
   };
 
   return (
@@ -50,7 +33,7 @@ export default function ProductList({ title, products }: ProductListProps) {
           View All <CgArrowTopRight />
         </button>
       </div>
-      {/* <Image alt="..." src={"/images/latest/table1.webp"} width={200} height={200}/> */}
+
       {/* div2 */}
       <div className="w-full flex flex-wrap gap-2 md:gap-7 items-start justify-center md:justify-start lg:justify-center h-fit md:h-1/2 mb-7">
         {products.map((item, idx) => (
@@ -62,6 +45,7 @@ export default function ProductList({ title, products }: ProductListProps) {
             }
             onMouseEnter={() => handleMouseEnter(idx)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick(item)}
             key={idx}
           >
             {/* image */}
