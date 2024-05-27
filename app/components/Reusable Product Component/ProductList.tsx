@@ -6,8 +6,8 @@ import { CgArrowTopRight } from "react-icons/cg";
 // types
 interface ProductInfo {
   description: string;
-  delivery: string;
-  policy: string;
+  delivery?: string;
+  policy?: string;
 }
 
 interface ProductImage {
@@ -57,11 +57,12 @@ export default function ProductList({ title, products }: ProductListProps) {
           <div
             className={
               hoveredItem === idx
-                ? "w-[45%] md:w-[30%] lg:w-[22%] hover:scale-105 transition-transform duration-500 relative"
+                ? "w-[45%] md:w-[30%] lg:w-[22%] hover:scale-105 transition-transform duration-500 relative cursor-pointer"
                 : "w-[45%] md:w-[30%] lg:w-[22%] hover:scale-100"
             }
             onMouseEnter={() => handleMouseEnter(idx)}
             onMouseLeave={handleMouseLeave}
+            key={idx}
           >
             {/* image */}
             <Image
