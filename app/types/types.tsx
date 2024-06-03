@@ -11,7 +11,7 @@ export interface ProductImage {
 
 export interface Product {
   image: ProductImage[];
-  name: "Miranda Couch";
+  name: string;
   slug: string;
   qty: number;
   regularPrice?: number;
@@ -24,3 +24,8 @@ export interface ProductListProps {
   title: string;
   products: Product[];
 }
+
+export interface ButtonProps{
+  title:string;
+}
+

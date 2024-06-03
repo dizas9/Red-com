@@ -1,13 +1,16 @@
 "use client";
 import { Product, ProductListProps } from "@/app/types/types";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { CgArrowTopRight } from "react-icons/cg";
+import Button from "../Reusable Button/Button";
+
 
 // components
 export default function ProductList({ title, products }: ProductListProps) {
   const [hoveredItem, setHoveredItem] = useState(null);
+
   const router = useRouter();
 
   const handleMouseEnter = (index: any) => {
@@ -20,8 +23,7 @@ export default function ProductList({ title, products }: ProductListProps) {
 
   // navigate to product details page
   const handleClick = (product: Product) => {
-    const encodePeoduct = encodeURIComponent(JSON.stringify(product));
-    router.push(`/details/${product.slug}?product=${encodePeoduct}`);
+    router.push(`/details/${product.slug}`);
   };
 
   return (
@@ -29,9 +31,9 @@ export default function ProductList({ title, products }: ProductListProps) {
       {/* div1 */}
       <div className="w-full  flex justify-between items-center mb-3">
         <p className="text-xl lg:2xl  font-semibold">{title}</p>
-        <button className="px-2 py-1 border rounded-md text-gray-500 font-normal flex items-center gap-1">
-          View All <CgArrowTopRight />
-        </button>
+
+        <Button title="View All"/>
+       
       </div>
 
       {/* div2 */}

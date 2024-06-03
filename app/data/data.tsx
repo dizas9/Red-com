@@ -1,3 +1,5 @@
+import { Product } from "../types/types";
+
 export const categories = [
   { name: "Sculpture Vase" },
   { name: "Furniture" },
@@ -38,27 +40,27 @@ export const testimonials = [
   },
 ];
 
-// types
-interface ProductInfo {
-  description: string;
-  delivery?: string;
-  policy?: string;
-}
+// // types
+// interface ProductInfo {
+//   description: string;
+//   delivery?: string;
+//   policy?: string;
+// }
 
-interface ProductImage {
-  src: string;
-}
+// interface ProductImage {
+//   src: string;
+// }
 
-interface Product {
-  image: ProductImage[];
-  name: string;
-  slug: string;
-  qty: number;
-  regularPrice?: number;
-  discountPrice: number;
-  color?: string[];
-  info: ProductInfo[];
-}
+// interface Product {
+//   image: ProductImage[];
+//   name: string;
+//   slug: string;
+//   qty: number;
+//   regularPrice?: number;
+//   discountPrice: number;
+//   color?: string[];
+//   info: ProductInfo[];
+// }
 
 export const latest: Product[] = [
   {
@@ -163,6 +165,7 @@ export const sculpture: Product[] = [
       { src: "/images/sculpture/broken2.webp" },
     ],
     name: "Broken Tree Flower Vase",
+    slug: "broken-tree-flower-vase",
     qty: 97,
     regularPrice: 5000,
     discountPrice: 2100,
@@ -181,6 +184,7 @@ export const sculpture: Product[] = [
       { src: "/images/sculpture/soft2.webp" },
     ],
     name: "Soft Throw Flower Vase",
+    slug: "soft-throw-flower-vase",
     qty: 99,
     regularPrice: 8999,
     discountPrice: 7999,
@@ -199,6 +203,7 @@ export const sculpture: Product[] = [
       { src: "/images/sculpture/button2.webp" },
     ],
     name: "Button Sculpture Vase",
+    slug: "button-sculpture-vase",
     qty: 99,
     regularPrice: 2000,
     discountPrice: 1800,
@@ -217,6 +222,7 @@ export const sculpture: Product[] = [
       { src: "/images/sculpture/flower2.webp" },
     ],
     name: "Clomplot Flower Vase",
+    slug: "clomplot-flower-vase",
     qty: 100,
     regularPrice: 5500,
     discountPrice: 2100,
@@ -237,6 +243,7 @@ export const bedroom: Product[] = [
       { src: "/images/bedroom/big2.webp" },
     ],
     name: "Big Linen Cushion",
+    slug: "big-linen-cushion",
     qty: 99,
     regularPrice: 300,
     discountPrice: 200,
@@ -257,6 +264,7 @@ export const bedroom: Product[] = [
       { src: "/images/bedroom/linen4.webp" },
     ],
     name: "Linen Cushion Bundle",
+    slug: "linen-cushion-bundle",
     qty: 100,
     regularPrice: 5000,
     discountPrice: 4200,
@@ -277,6 +285,7 @@ export const bedroom: Product[] = [
       { src: "/images/bedroom/woolen5.webp" },
     ],
     name: "Woolen Blanket",
+    slug: "woolen-blanket",
     qty: 100,
     regularPrice: 4500,
     discountPrice: 3900,
@@ -297,6 +306,7 @@ export const bedroom: Product[] = [
       { src: "/images/bedroom/cushion4.webp" },
     ],
     name: "Cushion Blanket",
+    slug: "cushion-blanket",
     qty: 100,
     regularPrice: 800,
     discountPrice: 350,
@@ -310,7 +320,6 @@ export const bedroom: Product[] = [
   },
 ];
 
-
 export const glasses: Product[] = [
   {
     image: [
@@ -319,6 +328,7 @@ export const glasses: Product[] = [
       { src: "/images/glasses/carafe3.webp" },
     ],
     name: "Glasses & Carafe",
+    slug: "glasses-&-carafe",
     qty: 100,
     regularPrice: 8000,
     discountPrice: 6500,
@@ -338,6 +348,7 @@ export const glasses: Product[] = [
       { src: "/images/glasses/carafe3.webp" },
     ],
     name: "Brown Seel Glass",
+    slug: "brown-seel-glass",
     qty: 0,
     regularPrice: 6000,
     discountPrice: 2500,
@@ -354,6 +365,7 @@ export const glasses: Product[] = [
       { src: "/images/glasses/drink.webp" },
     ],
     name: "Drinking Glass",
+    slug: "drinking-glass",
     qty: 9,
     regularPrice: 4500,
     discountPrice: 2100,
@@ -371,6 +383,7 @@ export const glasses: Product[] = [
       { src: "/images/glasses/craft.webp" },
     ],
     name: "Hashi Crafted Glass",
+    slug: "hashi-crafted-glass",
     qty: 100,
     regularPrice: 5000,
     discountPrice: 2200,
@@ -381,4 +394,11 @@ export const glasses: Product[] = [
       },
     ],
   },
+];
+
+export const productCollections = [
+  ...latest,
+  ...sculpture,
+  ...bedroom,
+  ...glasses,
 ];

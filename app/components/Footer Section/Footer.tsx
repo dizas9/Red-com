@@ -4,7 +4,7 @@ import SocialLink from "./SocialLink";
 
 export default function Footer() {
   return (
-    <div className="lg:px-10 md:px-28 lg:py-2 p-2 flex flex-col  px-3 h-fit">
+    <div className="lg:px-10 md:px-28 lg:py-2 p-2 flex flex-col  px-3 h-fit 2xl:max-w-[100rem] mx-auto">
       <hr className="h-[0.1rem] bg-slate-400 mb-5" />
       {/* logo */}
       <div className="mb-16">
@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
 
       <div className="w-full flex items-center justify-center py-6">
-        <Image alt="..." src={"/logo/logo2.webp"} width={20} height={200}/>
+        <Image alt="..." src={"/logo/logo2.webp"} width={20} height={200} />
         <p className="text-gray-400 text-xs ">We Run On Redshop</p>
       </div>
     </div>
